@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoutes from "./routes/authRoutes.js";
 import cors from "cors";
-
+import protectedRoutes from "./routes/protectedRoutes.js"
 // Mounting the dpendencies
 const app = express();
 dotenv.config();
@@ -11,7 +11,9 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
-app.use("api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
+app.use('/api',protectedRoutes);
+
 // DB setup
 const PORT = process.env.PORT || 6001;
 mongoose
