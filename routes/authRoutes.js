@@ -5,7 +5,7 @@ import express from "express";
 
 const router = express.Router();
 
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const { username, password, email } = req.body;
     const salt = await bcrypt.genSalt(10);

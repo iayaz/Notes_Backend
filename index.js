@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
-app.use("/auth", authRoutes);
+app.use("api/auth", authRoutes);
 // DB setup
 const PORT = process.env.PORT || 6001;
 mongoose
