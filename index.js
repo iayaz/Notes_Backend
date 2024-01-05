@@ -3,16 +3,24 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoutes from "./routes/authRoutes.js";
 import cors from "cors";
-import protectedRoutes from "./routes/protectedRoutes.js"
+import protectedRoutes from "./routes/protectedRoutes.js";
+import rateLimit from "express-rate-limit";
 // Mounting the dpendencies
 const app = express();
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 80,
+  message: "Too many requests from this IP, please try again later.",
+});
+
+app.use(limiter);
 dotenv.config();
 app.use(express.json());
 app.use(cors());
 
 //Routes
 app.use("/api/auth", authRoutes);
-app.use('/api',protectedRoutes);
+app.use("/api", protectedRoutes);
 
 // DB setup
 const PORT = process.env.PORT || 6001;
