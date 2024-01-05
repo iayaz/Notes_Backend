@@ -1,6 +1,5 @@
 
 
-```
 # Note Management App
 
 This application allows users to manage their notes and share them with other users.
@@ -12,7 +11,6 @@ This application allows users to manage their notes and share them with other us
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
-
 
 ## Introduction
 
@@ -38,7 +36,7 @@ The Note Management App is a full-stack application built with Node.js, Express,
 
    ```bash
    git clone https://github.com/iayaz/Notes_Backend.git
-   ```
+
 
 2. **Install Dependencies:**
 
