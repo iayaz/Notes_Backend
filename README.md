@@ -1,6 +1,6 @@
 
 
-```markdown
+```
 # Note Management App
 
 This application allows users to manage their notes and share them with other users.
